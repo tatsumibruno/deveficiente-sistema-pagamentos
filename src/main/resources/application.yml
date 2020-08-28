@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/sistema-pagamentos
+    username: postgres
+    password: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: false
+        temp:
+          use_jdbc_metadata_defaults: false
+  flyway:
+    baseline-on-migrate: true
+server:
+  port: 8081
+  compression:
+    enabled: true
+jwt:
+  secret: mercadolivre
+sendgrid:
+  api-key: SENDGRID-KEY
+  from: SENDGRID-FROM
+aws:
+  access-key: ACCESS-KEY
+  secret-key: SECRET-KEY
